@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&family=Sarabun:wght@300;400;600&family=Sriracha&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- หน้าแรก -->
+    <div id="landingPage" class="page active">
+        <!-- 3D Hearts Left Side -->
+        <div class="hearts-left">
+            <div class="heart-3d heart-large"></div>
+            <div class="heart-3d heart-medium"></div>
+            <div class="heart-3d heart-small"></div>
+        </div>
+
+        <!-- 3D Hearts Right Side -->
+        <div class="hearts-right">
+            <div class="heart-3d heart-large"></div>
+            <div class="heart-3d heart-medium"></div>
+            <div class="heart-3d heart-small"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container">
+            <h1 class="valentine-title">Happy Valentine's Day</h1>
+            <h3 class="wife-name">My Kantika</h3>
+            <p class="main-description">ความทรงจำบางอย่าง…<br>จะถูกปลดล็อกเมื่อคุณผ่านบททดสอบ</p>
+
+            <div class="button-container">
+                <button class="btn-play-modern" onclick="startGame()">
+                    <span>เริ่มเลย ›</span>
+                </button>
+                <button class="btn-no-play-modern" id="noPlayBtn">
+                    <span>ไม่เล่น</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Clouds at Bottom -->
+        <div class="clouds-bottom">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+            <div class="cloud cloud-5"></div>
+        </div>
+    </div>
+
+    <!-- หน้าเกม -->
+    <div id="gamePage" class="page">
+        <div class="game-container">
+            <div class="love-meter-container">
+                <div class="love-meter-label">
+                    <span>❤️ หลอดความรัก:</span>
+                </div>
+                <div class="love-meter">
+                    <div class="love-meter-fill" id="loveMeterFill"></div>
+                    <div class="love-meter-text" id="loveMeterText">0 / 14</div>
+                </div>
+            </div>
+
+            <canvas id="gameCanvas"></canvas>
+
+            <div class="game-instruction">
+                <p>ใช้ลูกศรซ้าย-ขวา หรือลากตะกร้าเพื่อจับหัวใจ 💕</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- หน้าของขวัญ -->
+    <div id="giftPage" class="page">
+        <div class="grand-opening-container">
+            <!-- Light Rays -->
+            <div class="light-rays">
+                <div class="ray"></div>
+                <div class="ray"></div>
+                <div class="ray"></div>
+                <div class="ray"></div>
+                <div class="ray"></div>
+            </div>
+
+            <!-- Floating Hearts & Sparkles -->
+            <div class="opening-elements">
+                <div class="floating-item heart-pop-1">💖</div>
+                <div class="floating-item heart-pop-2">💗</div>
+                <div class="floating-item heart-pop-3">💕</div>
+                <div class="floating-item sparkle-1">✨</div>
+                <div class="floating-item sparkle-2">✨</div>
+            </div>
+
+            <!-- The Big Box -->
+            <div class="gift-box-wrapper" id="giftBoxWrapper">
+                <div class="gift-box-modern">
+                    <div class="box-lid-modern"></div>
+                    <div class="box-body-modern"></div>
+                </div>
+            </div>
+
+            <!-- Glowing Text (Initially hidden, revealed on click) -->
+            <div class="glowing-valentine-text" id="glowingText">
+                <p class="text-top">Well done!</p>
+                <h2 class="text-main">You got a gift</h2>
+                <!-- <p class="text-bottom">DAY</p> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- หน้าใส่รหัสผ่าน -->
+    <div id="passwordPage" class="page">
+        <div class="container">
+            <div class="password-card">
+                <h2 class="password-title">กรอกรหัสผ่าน</h2>
+                <p class="password-hint">คำใบ้ : รหัสผ่านคือวันครบรอบของเรา</p>
+
+                <div class="password-inputs" id="passwordInputs">
+                    <input type="text" maxlength="1" class="password-input" data-index="0" />
+                    <input type="text" maxlength="1" class="password-input" data-index="1" />
+                    <input type="text" maxlength="1" class="password-input" data-index="2" />
+                    <input type="text" maxlength="1" class="password-input" data-index="3" />
+                    <input type="text" maxlength="1" class="password-input" data-index="4" />
+                    <input type="text" maxlength="1" class="password-input" data-index="5" />
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- หน้าการ์ด (เมนูหลัก) -->
+    <div id="cardsPage" class="page">
+        <div class="cards-container-modern">
+            <h1 class="valentine-week-title">To Kantika</h1>
+
+            <div class="cards-grid-modern">
+                <!-- Card 2 -->
+                <div class="card-modern" onclick="openCard(1)">
+                    <div class="card-content-top">
+                        <p class="card-modern-title">จดหมาย<br>ถึงคนน่ารัก</p>
+                    </div>
+                    <div class="card-arrow-btn">
+                        <span>→</span>
+                    </div>
+                    <div class="card-image-box">
+                        <div class="modern-icon">🐰</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-modern" onclick="openCard(2)">
+                    <div class="card-content-top">
+                        <p class="card-modern-title">เรารู้ใจกัน<br>มากแค่ไหน</p>
+                    </div>
+                    <div class="card-arrow-btn">
+                        <span>→</span>
+                    </div>
+                    <div class="card-image-box">
+                        <div class="modern-icon">🧁</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card-modern" onclick="openCard(3)">
+                    <div class="card-content-top">
+                        <p class="card-modern-title">ความทรงจำ<br>ระหว่างเรา</p>
+                    </div>
+                    <div class="card-arrow-btn">
+                        <span>→</span>
+                    </div>
+                    <div class="card-image-box">
+                        <div class="modern-icon">📷</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- หน้าการ์ดที่ 1: เราดับกันมานาน -->
+    <div id="card0Page" class="page">
+        <div class="container">
+            <button class="btn-back" onclick="backToCards()">←</button>
+            <div class="card-detail">
+                <div class="card-detail-icon">🍒</div>
+                <h2 class="card-detail-title">เราดับกันมานาน เท่าให้รันลิ้วนะ</h2>
+                <div class="card-detail-content">
+                    <p>เวลาที่เราอยู่ด้วยกันทำให้ทุกวันมีความสุข และทุกช่วงเวลาล้วนมีค่าสำหรับเรา</p>
+
+                    <h4>ความทรงจำที่สวยงาม:</h4>
+                    <ul>
+                        <li>วันแรกที่เราพบกัน เหมือนเวทมนตร์ที่ทำให้ชีวิตสดใส</li>
+                        <li>ทุกครั้งที่เรายิ้มให้กัน หัวใจก็เต้นแรงขึ้น</li>
+                        <li>การเดินเคียงข้างกันในทุกย่างก้าว</li>
+                        <li>ทุกคำพูดที่เราแบ่งปันกัน</li>
+                    </ul>
+
+                    <p style="margin-top: 20px; font-weight: 600; color: #ec4899;">
+                        และเราจะสร้างความทรงจำดีๆ ต่อไปอีกมากมายในอนาคต 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- หน้าการ์ดที่ 2: ไปรษณียบัตรถึงคนน่ารัก -->
+    <div id="card1Page" class="page">
+        <div class="letter-page-container">
+            <div class="postcard-header">
+                <button class="btn-back-modern" onclick="backToCards()">←</button>
+                <p class="flip-hint">แตะที่การ์ดเพื่อพลิกดูรูปนะ 🥰</p>
+            </div>
+
+            <div class="postcard-wrapper" onclick="this.classList.toggle('flipped')">
+                <div class="postcard-inner">
+                    <!-- Front of Postcard -->
+                    <div class="postcard-front">
+                        <div class="postcard-border">
+                            <div class="postcard-content">
+                                <div class="postcard-left">
+                                    <div class="postcard-message-area">
+                                        <p class="postcard-text">จดหมายถึงคนน่ารัก</p>
+                                    </div>
+                                    <div class="postcard-stamp-circle">
+                                        <span>MADE WITH LOVE</span>
+                                        <div class="stamp-heart">❤</div>
+                                    </div>
+                                </div>
+
+                                <div class="postcard-divider"></div>
+
+                                <div class="postcard-right">
+                                    <div class="postcard-stamps">
+                                        <div class="mini-stamp">💌</div>
+                                        <div class="mini-stamp">💖</div>
+                                        <div class="mini-stamp">🕊️</div>
+                                    </div>
+                                    <div class="address-lines">
+                                        <div class="line">To: <span>Kantika</span></div>
+                                        <div class="line">From: <span>Chananya</span></div>
+                                        <div class="line">Message: <span>สุขสันต์วันวาเลนไทน์ปีแรกของเรานะคะ 🥰</span>
+                                        </div>
+                                        <div class="line"><span>เค้าขอให้เราน่ารักกันแบบนี้ไปนาน ๆ เลย</span></div>
+                                        <div class="line"><span>ขอให้เรามีแต่ความสุข มีเงินมีทองใช้ไม่ขาดมือ</span>
+                                        </div>
+                                        <div class="line">
+                                            <p class="postcard-text-bold">รักเธอมาก ๆ เลย 🤍</p>
+                                        </div>
+                                    </div>
+                                    <div class="postcard-footer-logo">❤ Happy Valentine's Day</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Back of Postcard (The Photo) -->
+                    <div class="postcard-back">
+                        <div class="photo-frame">
+                            <div class="couple-photo">
+                                <!-- คุณสามารถเปลี่ยน src เป็นรูปจริงของคุณได้ที่นี่ -->
+                                <img src="img/married.jpg" alt="Couple Photo">
+                                <div class="photo-overlay">
+                                    <span>คุณภรรยาครับ ❤</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- หน้าการ์ดที่ 3: แบบทดสอบ -->
+    <div id="card2Page" class="page">
+        <div class="container">
+            <button class="btn-back" onclick="backToCards()">←</button>
+            <div class="card-detail">
+                <div class="card-detail-icon">🧁</div>
+                <h2 class="card-detail-title">เรารู้ใจกัน มากแต่ไหน</h2>
+                <div class="card-detail-content" id="quizContent">
+                    <!-- Quiz content will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- หน้าการ์ดที่ 4: ความทรงจำ -->
+    <div id="card3Page" class="page">
+        <div class="container">
+            <button class="btn-back" onclick="backToCards()">←</button>
+            <div class="card-detail">
+                <h2 class="card-detail-title">ความทรงจำ</h2>
+                <div class="card-detail-content" id="memoryContent">
+                    <!-- Memory content will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal สำหรับแสดง Content ของแต่ละการ์ด -->
+    <div id="cardModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeCardModal()">&times;</span>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
