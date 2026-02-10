@@ -109,7 +109,7 @@ let canvas, ctx;
 let basket = { x: 0, y: 0, width: 120, height: 60 };
 let hearts = [];
 let score = 0;
-const targetScore = 2;
+const targetScore = 14;
 let gameRunning = false;
 let animationId;
 let keys = {};
@@ -923,6 +923,10 @@ function renderMemoryInPage() {
                 มีอะไรให้ลุ้นเยอะมาก
                 แต่เค้าก็พยายาม
                 สุดความสามารถจริง ๆ</p>
+
+                <div class="story-image-container">
+                    <img src="img/gf.jpg" alt="Memory Photo 2" class="story-image">
+                </div>
 
                 <p class="story-paragraph">เราเลือกวันที่
                 25/10/25</p>
