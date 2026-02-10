@@ -196,7 +196,7 @@ body {
 
 /* ===== Landing Page Content ===== */
 .valentine-title {
-    font-family: 'Brush Script MT', cursive, 'Prompt', sans-serif;
+    font-family: 'Pacifico', 'Dancing Script', 'Sriracha', cursive, sans-serif;
     font-size: 5rem;
     font-weight: 400;
     color: #ff4d7d;
@@ -229,8 +229,9 @@ body {
 }
 
 .wife-name {
+    font-family: 'Pacifico', 'Dancing Script', 'Sriracha', cursive, sans-serif;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #c41e54;
     margin-bottom: 25px;
     letter-spacing: 1px;
@@ -790,7 +791,7 @@ body {
 }
 
 .text-main {
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Pacifico', 'Dancing Script', 'Sriracha', cursive, sans-serif;
     font-size: 6rem;
     color: white;
     margin: 5px 0;
@@ -915,7 +916,7 @@ body {
 }
 
 .valentine-week-title {
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Pacifico', 'Dancing Script', 'Sriracha', cursive, sans-serif;
     font-size: 5rem;
     color: #ff4d6d;
     margin-bottom: 60px;
