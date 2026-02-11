@@ -21,9 +21,14 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #ffd4e5;
+}
+
 body {
     font-family: 'Prompt', 'Sarabun', sans-serif;
-    background: linear-gradient(180deg, #ffd4e5 0%, #ffe0ec 30%, #fff0f6 60%, #ffffff 100%);
+    background: linear-gradient(180deg, #ffd4e5 0%, #ffe0ec 30%, #fff0f6 60%, #ffecf3 100%);
+    background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -306,7 +311,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 150px;
+    height: 250px;
     z-index: 0;
     overflow: hidden;
 }
@@ -329,112 +334,232 @@ body {
 }
 
 .cloud-1 {
-    width: 120px;
-    height: 50px;
-    left: 0%;
+    width: 250px;
+    height: 100px;
+    left: -5%;
     animation-duration: 25s;
 }
 
 .cloud-1::before {
-    width: 60px;
-    height: 60px;
-    top: -30px;
-    left: 20px;
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    left: 40px;
 }
 
 .cloud-1::after {
-    width: 80px;
-    height: 70px;
-    top: -35px;
-    right: 10px;
+    width: 150px;
+    height: 140px;
+    top: -70px;
+    right: 30px;
 }
 
 .cloud-2 {
-    width: 100px;
-    height: 40px;
-    left: 20%;
+    width: 200px;
+    height: 80px;
+    left: 15%;
     animation-duration: 30s;
     animation-delay: -5s;
 }
 
 .cloud-2::before {
-    width: 50px;
-    height: 50px;
-    top: -25px;
-    left: 15px;
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: 30px;
 }
 
 .cloud-2::after {
-    width: 65px;
-    height: 60px;
-    top: -30px;
-    right: 8px;
+    width: 130px;
+    height: 120px;
+    top: -60px;
+    right: 20px;
 }
 
 .cloud-3 {
-    width: 140px;
-    height: 55px;
-    left: 40%;
+    width: 280px;
+    height: 110px;
+    left: 35%;
     animation-duration: 28s;
     animation-delay: -10s;
 }
 
 .cloud-3::before {
-    width: 70px;
-    height: 70px;
-    top: -35px;
-    left: 25px;
+    width: 140px;
+    height: 140px;
+    top: -70px;
+    left: 50px;
 }
 
 .cloud-3::after {
-    width: 90px;
-    height: 80px;
-    top: -40px;
-    right: 15px;
+    width: 180px;
+    height: 160px;
+    top: -80px;
+    right: 30px;
 }
 
 .cloud-4 {
-    width: 110px;
-    height: 45px;
-    left: 65%;
+    width: 220px;
+    height: 90px;
+    left: 55%;
     animation-duration: 32s;
     animation-delay: -15s;
 }
 
 .cloud-4::before {
-    width: 55px;
-    height: 55px;
-    top: -28px;
-    left: 18px;
+    width: 110px;
+    height: 110px;
+    top: -55px;
+    left: 35px;
 }
 
 .cloud-4::after {
-    width: 70px;
-    height: 65px;
-    top: -33px;
-    right: 10px;
+    width: 140px;
+    height: 130px;
+    top: -65px;
+    right: 20px;
 }
 
 .cloud-5 {
-    width: 130px;
-    height: 52px;
-    left: 85%;
+    width: 260px;
+    height: 105px;
+    left: 75%;
     animation-duration: 27s;
     animation-delay: -20s;
 }
 
 .cloud-5::before {
-    width: 65px;
-    height: 65px;
-    top: -33px;
-    left: 22px;
+    width: 130px;
+    height: 130px;
+    top: -65px;
+    left: 45px;
 }
 
 .cloud-5::after {
-    width: 85px;
+    width: 170px;
+    height: 150px;
+    top: -75px;
+    right: 25px;
+}
+
+.cloud-6 {
+    width: 180px;
+    height: 70px;
+    left: 5%;
+    bottom: -10px;
+    animation-duration: 22s;
+    animation-delay: -2s;
+    opacity: 0.7;
+}
+
+.cloud-6::before {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    left: 25px;
+}
+
+.cloud-6::after {
+    width: 110px;
+    height: 100px;
+    top: -50px;
+    right: 15px;
+}
+
+.cloud-7 {
+    width: 240px;
+    height: 95px;
+    left: 25%;
+    bottom: -25px;
+    animation-duration: 35s;
+    animation-delay: -8s;
+    opacity: 0.8;
+}
+
+.cloud-7::before {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    left: 40px;
+}
+
+.cloud-7::after {
+    width: 150px;
+    height: 140px;
+    top: -70px;
+    right: 25px;
+}
+
+.cloud-8 {
+    width: 200px;
+    height: 80px;
+    left: 45%;
+    bottom: -15px;
+    animation-duration: 29s;
+    animation-delay: -12s;
+    opacity: 0.75;
+}
+
+.cloud-8::before {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: 30px;
+}
+
+.cloud-8::after {
+    width: 130px;
+    height: 120px;
+    top: -60px;
+    right: 20px;
+}
+
+.cloud-9 {
+    width: 270px;
+    height: 108px;
+    left: 65%;
+    bottom: -30px;
+    animation-duration: 31s;
+    animation-delay: -18s;
+    opacity: 0.85;
+}
+
+.cloud-9::before {
+    width: 135px;
+    height: 135px;
+    top: -68px;
+    left: 48px;
+}
+
+.cloud-9::after {
+    width: 175px;
+    height: 155px;
+    top: -78px;
+    right: 28px;
+}
+
+.cloud-10 {
+    width: 190px;
     height: 75px;
-    top: -38px;
-    right: 12px;
+    left: 88%;
+    bottom: -10px;
+    animation-duration: 26s;
+    animation-delay: -4s;
+    opacity: 0.7;
+}
+
+.cloud-10::before {
+    width: 95px;
+    height: 95px;
+    top: -48px;
+    left: 28px;
+}
+
+.cloud-10::after {
+    width: 120px;
+    height: 110px;
+    top: -55px;
+    right: 18px;
 }
 
 @keyframes cloudFloat {
@@ -1782,6 +1907,119 @@ body {
     .card-detail-content {
         font-size: 1.05rem;
     }
+
+    .clouds-bottom {
+        height: 150px;
+    }
+
+    /* Keep original clouds for mobile */
+    .cloud-1 {
+        width: 120px;
+        height: 50px;
+        left: 0%;
+    }
+
+    .cloud-1::before {
+        width: 60px;
+        height: 60px;
+        top: -30px;
+        left: 20px;
+    }
+
+    .cloud-1::after {
+        width: 80px;
+        height: 70px;
+        top: -35px;
+        right: 10px;
+    }
+
+    .cloud-2 {
+        width: 100px;
+        height: 40px;
+        left: 20%;
+    }
+
+    .cloud-2::before {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+        left: 15px;
+    }
+
+    .cloud-2::after {
+        width: 65px;
+        height: 60px;
+        top: -30px;
+        right: 8px;
+    }
+
+    .cloud-3 {
+        width: 140px;
+        height: 55px;
+        left: 40%;
+    }
+
+    .cloud-3::before {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+        left: 25px;
+    }
+
+    .cloud-3::after {
+        width: 90px;
+        height: 80px;
+        top: -40px;
+        right: 15px;
+    }
+
+    .cloud-4 {
+        width: 110px;
+        height: 45px;
+        left: 65%;
+    }
+
+    .cloud-4::before {
+        width: 55px;
+        height: 55px;
+        top: -28px;
+        left: 18px;
+    }
+
+    .cloud-4::after {
+        width: 70px;
+        height: 65px;
+        top: -33px;
+        right: 10px;
+    }
+
+    .cloud-5 {
+        width: 130px;
+        height: 52px;
+        left: 85%;
+    }
+
+    .cloud-5::before {
+        width: 65px;
+        height: 65px;
+        top: -33px;
+        left: 22px;
+    }
+
+    .cloud-5::after {
+        width: 85px;
+        height: 75px;
+        top: -38px;
+        right: 12px;
+    }
+
+    .cloud-6,
+    .cloud-7,
+    .cloud-8,
+    .cloud-9,
+    .cloud-10 {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1808,30 +2046,29 @@ body {
     .hearts-left,
     .hearts-right {
         display: block;
-        /* Show them but rethink positioning */
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: 100px;
+        height: 250px;
         pointer-events: none;
         left: 0;
         right: 0;
         top: 0;
-        z-index: -1;
-        /* Place behind text */
-        opacity: 0.4;
-        /* Slightly fade to not distract from text */
+        z-index: 0;
+        opacity: 0.8;
     }
 
     .hearts-left {
-        transform: translate(-30px, -20px);
+        left: -10px;
+        top: 40px;
+        transform: rotate(-10deg);
     }
 
     .hearts-right {
         top: auto;
         bottom: 120px;
-        right: 0;
-        transform: translate(40px, 0);
-        opacity: 0.6;
+        right: -10px;
+        left: auto;
+        transform: rotate(10deg);
     }
 
     .cards-container-modern {
